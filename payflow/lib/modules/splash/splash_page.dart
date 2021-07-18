@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:payflow/modules/auth/auth_controller.dart';
-import 'package:payflow/modules/login/login_page.dart';
+import 'package:payflow/shared/auth/auth_controller.dart';
+
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_images.dart';
 

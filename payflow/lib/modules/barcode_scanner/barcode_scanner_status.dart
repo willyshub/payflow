@@ -13,29 +13,32 @@ class BarcodeScannerStatus {
   final bool isCameraAvailable;
   final String error;
   final String barcode;
-
-  final CameraController? controller;
+  final bool stopScanner;
 
   /// forma [padrão] de construir a classe.
   BarcodeScannerStatus({
     this.isCameraAvailable = false,
-    this.controller,
     this.error = "",
     this.barcode = "",
+    this.stopScanner = false,
   });
 
   /// Outra forma de construir a classe.
-  factory BarcodeScannerStatus.available(CameraController controller) =>
+  factory BarcodeScannerStatus.available() =>
       BarcodeScannerStatus(
         isCameraAvailable: true,
-        controller: controller,
+        stopScanner: false,
       );
 
-  factory BarcodeScannerStatus.error(String message) =>
-      BarcodeScannerStatus(error: message);
+  factory BarcodeScannerStatus.error(String message) => BarcodeScannerStatus(
+        error: message,
+        stopScanner: true,
+      );
 
-  factory BarcodeScannerStatus.barcode(String barcode) =>
-      BarcodeScannerStatus(barcode: barcode);
+  factory BarcodeScannerStatus.barcode(String barcode) => BarcodeScannerStatus(
+        barcode: barcode,
+        stopScanner: true,
+      );
 
   bool get showCamera => this.isCameraAvailable && error.isEmpty;
 

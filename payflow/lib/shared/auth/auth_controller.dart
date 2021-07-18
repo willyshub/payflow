@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:payflow/models/user_model.dart';
+import 'package:payflow/shared/models/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:payflow/modules/login/login_page.dart';
-import 'package:payflow/modules/home/home_page.dart';
 
 class AuthController {
   bool _isAuthenticated = false;
@@ -15,12 +13,13 @@ class AuthController {
     if (user != null) {
       saveUser(user);
       this._isAuthenticated = true;
-      Navigator.pushReplacementNamed(context, "/home");
+      Navigator.pushReplacementNamed(context, "/home", arguments: user);
     } else {
       this._isAuthenticated = false;
       Navigator.pushReplacementNamed(context, "/login");
     }
   }
+
   /// Salva em formato json utilizando o SharedPreference.
   Future<void> saveUser(UserModel user) async {
     final instance = await SharedPreferences.getInstance();
@@ -32,6 +31,7 @@ class AuthController {
   /// Baseando-se na respota, navega para páginas diferentes.
   Future<void> currentUser(BuildContext context) async {
     await Future.delayed(Duration(seconds: 1));
+
     /// Package nativo necessita rebuild do zero.
     final instance = await SharedPreferences.getInstance();
     if (instance.containsKey("user")) {

@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:payflow/models/user_model.dart';
-import 'package:payflow/modules/auth/auth_controller.dart';
+import 'package:payflow/shared/auth/auth_controller.dart';
+import 'package:payflow/shared/models/user_model.dart';
 
 class LoginController {
   final controller = AuthController(); 
