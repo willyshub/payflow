@@ -1,5 +1,6 @@
+![](https://github.com/wylysdev/payflow/blob/main/PayFlow.png) ![](https://github.com/wylysdev/payflow/blob/main/payflow.gif)
 # PayFlow - Organize seus boletos em um só lugar
-O PayFlow foi desenvolvido durante um treinamento da Rocket Seat, o NLW (que é um evento online com muito código, desafios, networking e um único objetivo: Avançar para o próximo nível).
+O PayFlow foi desenvolvido durante um treinamento da Rocketseat, o NLW.
 
 ## O que é o PayFlow? 
 O PayFlow se trata de um app mobile feito em Flutter blue_heart para Gerenciamento de Boletos, contendo recursos como o uso de câmera e galeria, Machine Leaning com MLKit, Firebase Core e SignIn, Animações e Estilizações Personalizadas, entre vários outros pontos, como o uso do SharedPreferences. 
